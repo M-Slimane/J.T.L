@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/font awesome/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>J.T.L</title>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="text-center">
+        <div class="brand">
+            <div class="logo">
+                <img src="./img/Logo 2.png" alt="logo">
+            </div>
+            <div class="slogo">
+                <img src="./img/جمعية تيفاوات لليافعين.png" alt="slogo">
+            </div>
+        </div>
+
+        <div class="heading-page">
+            <h1>إنتظرو إنطلاق الموقع تقريبا</h1>
+            <p>رسالتنا هي توفير البيئة الملائمة التي تساعد اليافع على النمو🧠
+                <br>
+                دينيا 🕌 | اجتماعيا 💬 |بدنيا💪| ثقافيا 📚 | فكريا
+            </p>
+        </div>
+
+        <div class="count-down">
+            <div class="counter">
+                <span class="count-amount" id="months"></span>
+                <span class="count-period">أشهر</span>
+            </div>
+            <div class="counter">
+                <span class="count-amount" id="days"></span>
+                <span class="count-period">أيام</span>
+            </div>
+            <div class="counter">
+                <span class="count-amount" id="hours"></span>
+                <span class="count-period">ساعات</span>
+            </div>
+            <div class="counter">
+                <span class="count-amount" id="minutes"></span>
+                <span class="count-period">دقائق</span>
+            </div>
+            <div class="counter">
+                <span class="count-amount" id="seconds"></span>
+                <span class="count-period">ثواني</span>
+            </div>
+        </div>
+
+        <div class="send-notification">
+            <p>هل تريد إرسال إشعار فور إنطلاق الموقع؟</p>
+            <form class="needs-validation" novalidate>
+                <div class="input-group">
+                    <input type="email" name="email" class="form-control" placeholder="أدخل بريدك الإلكتروني هنا" required>
+                    <button type="submit" class="btn"><img src="./img/02-Icons/00-send.png"
+                            alt="send notification"></button>
+                    <div class="invalid-feedback">
+                        عذرا ، يرجى إدخال بريد إلكتروني صالح...
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </header>
+
+    <!-- main body -->
+    <main>
+        <section class="features">
+            <div class="container">
+                <h2>مميزات الموقع</h2>
+
+                <div class="row">
+
+                    <!-- البطاقة الأولى -->
+                    <!-- تصميم أنيق و عصري -->
+                    <div class="col-md-6">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0">
+                                <img src="./img/02-Icons/01-Brush.png" alt="brush icon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4>تصميم أنيق و عصري</h4>
+                                <p> واجهة عصرية ومريحة للعين تسهّل على الأولياء تصفح الموقع والوصول إلى المعلومات بسرعة.
+                                    ألوان هادئة، تنظيم واضح، وتجربة استخدام سهلة تناسب جميع الفئات...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- البطاقة الثانية -->
+                    <!-- أرشفة كاملة للأنشطة -->
+                    <div class="col-md-6">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0">
+                                <img src="./img/02-Icons/02-archive.png" alt="archive icon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4>أرشفة كاملة للأنشطة</h4>
+                                <p>
+                                    سنوثق جميع الأنشطة الثقافية، البيئية، الاجتماعية، الرياضية والدينية في الموقع مع
+                                    صور،
+                                    تقارير مختصرة، وتواريخ واضحة لتمكين الأولياء من متابعة كل جديد.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- البطاقة الثالثة -->
+                    <!-- متابعة خاصة للاولياء-->
+                    <div class="col-md-6">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0">
+                                <img src="./img/02-Icons/03-parrents.png" alt="notification icon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4>متابعة خاصة للاولياء</h4>
+                                <p> إمكانية إطلاع الأولياء على: البرامج الأسبوعية، صور الأنشطة، إنجازات أبنائهم، تقارير
+                                    دورية عن الفعاليات لضمان الشفافية و التواصل المستمر...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- البطاقة الرابعة -->
+                    <!-- تسجيل إلكتروني سهل و سريع -->
+                    <div class="col-md-6">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0">
+                                <img src="./img/02-Icons/04-sign in.png" alt="notification icon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4>تسجيل إلكتروني سهل و سريع</h4>
+                                <p> نظام تسجيل بسيط عبر الموقع يمكن الأولياء من:تسجيل أبنائهم في الأنشطة، اختيار البرامج
+                                    المناسبة،إدخال البيانات بسهولة وأمان...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- البطاقة الخامسة -->
+                    <!-- رزنامة الأنشطة والمواعيد-->
+                    <div class="col-md-6">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0">
+                                <img src="./img/02-Icons/05-schedule.png" alt="notification icon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4>رزنامة الأنشطة و المواعيد</h4>
+                                <p> تقويم منظم يعرض: مواعيد النشاطات، الفعاليات القادمة، المعسكرات والخرجات، المناسبات
+                                    الخاصة...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- البطاقة السادسة -->
+                    <!-- معرض صور وفيديوهات-->
+                    <div class="col-md-6">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0">
+                                <img src="./img/02-Icons/06-gallery.png" alt="notification icon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4>معرض صور وفيديوهات</h4>
+                                <p> قسم مخصص لعرض: صور الأنشطة، ملخصات الفيديو، لحظات مميزة من الفعاليات، ليعيش الأولياء
+                                    أجواء النشاط حتى إن لم يحضروا...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- البطاقة السابعة -->
+                    <!-- أخبار و إعلانات الجمعية-->
+                    <div class="col-md-6">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0">
+                                <img src="./img/02-Icons/07-news.png" alt="notification icon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4>أخبار و إعلانات الجمعية</h4>
+                                <p> آخر المستجدات، الإعلانات، والبيانات الرسمية حتى يبقى الجميع على اطلاع دائم...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- البطاقة الثامنة -->
+                    <!-- تواصل مباشر مع الإدارة-->
+                    <div class="col-md-6">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0">
+                                <img src="./img/02-Icons/08-call.png" alt="notification icon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4>تواصل مباشر مع الإدارة</h4>
+                                <p> نموذج تواصل يسمح للأولياء بطرح:استفسارات، اقتراحات و ملاحظات...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- البطاقة التاسعة -->
+                    <!-- تواصل مباشر مع الإدارة-->
+                    <div class="col-md-12">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0">
+                                <img src="./img/02-Icons/09-privacy.png" alt="notification icon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4>حماية وخصوصية البيانات</h4>
+                                <p> نولي في جمعية تيفاوت أهمية كبيرة لحماية بيانات الأطفال والأولياء.
+                                    جميع المعلومات التي يتم إدخالها عبر الموقع (بيانات التسجيل، أرقام الهواتف، الصور،
+                                    وغيرها)
+                                    يتم التعامل معها بسرية تامة
+                                    <br>
+                                    ولا يتم مشاركتها مع أي جهة خارج الجمعية أيظا نحن
+                                    نحرص على استخدام أنظمة حماية مناسبة لضمان أمان البيانات ومنع أي استخدام غير مصرح به.
+
+                                    <br>
+                                    كما يتم نشر الصور والتقارير الخاصة
+                                    بالأنشطة بشكل مسؤول، مع احترام خصوصية المشاركين
+                                    وموافقة الأولياء عند الحاجة.
+                                    <br>
+                                    هدفنا هو توفير بيئة رقمية آمنة تعكس قيم الثقة، الشفافية، والمسؤولية التي تقوم عليها
+                                    جمعية تيفاوت.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-notification">
+            <h3>قم بإظافة بريدك الإلكتروني ليصلك إشعار فوق الإنطلاق</h3>
+            <form class="needs-validation" novalidate>
+                <div class="input-group">
+                    <input type="email" name="email" class="form-control" required placeholder="أدخل بريدك الإلكتروني هنا">
+                    <button type="submit"><img src="./img/02-Icons/00-send 1 (Custom).png" alt=""></button>
+                    <div class="invalid-feedback">عذرا يرجى إدخال بريد إلكتروني صالح</div>
+                </div>
+            </form>
+        </div>
+
+        <div class="social-media">
+            <h3>تابعنا على مواقع التواصل الإجتماعي</h3>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://www.facebook.com/TifaouteAssociation"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/associationtifaout.jtl/"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://wa.me/213654901284"><i class="fa-brands fa-whatsapp"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://t.me/tifawtjtl"><i class="fa-brands fa-telegram"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="mailto:associationtifaout.jtl@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </li>
+            </ul>
+
+            <hr>
+
+            <a href="mailto:associationtifaout.jtl@gmail.com" class="email">
+                <i class="fa-solid fa-envelope"></i>
+                associationtifaout.jtl@gmail.com
+            </a>
+        </div>
+
+        <div class="all-right">
+            <p>جميع الحقوق محفوظة لجمعية تيفاوت &copy;2026</p>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
