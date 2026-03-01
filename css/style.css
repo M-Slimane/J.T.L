@@ -14,6 +14,10 @@
     src: url(../fonts/Cairo-SemiBold.woff) format("woff");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: sf-arabic;
     direction: rtl;
@@ -28,8 +32,19 @@ header{
 header .brand{
     margin: 100px auto 60px;
     display: inline-block;
-    padding-bottom: 30px;
+    padding-bottom: 5px;
     border-bottom: 5px solid #464b52;
+}
+
+header .brand .slogo a{
+    text-decoration: none;
+    color: inherit;
+}
+
+header .brand .slogo a p{
+    background-color: none;
+    color: #fff;
+    margin-top: 20px;
 }
 
 header .heading-page h1{
