@@ -1,0 +1,6 @@
+# السماح لجميع محركات البحث بفحص الموقع كاملاً
+User-agent: *
+Allow: /
+
+# رابط الخريطة الخاص بموقعك (استبدله برابطك الفعلي)
+Sitemap: https://m-slimane.github.io/J.T.L/sitemap.xml
