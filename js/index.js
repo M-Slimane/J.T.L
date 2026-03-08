@@ -1,68 +1,78 @@
-var countDownDate = new Date();
-countDownDate = new Date(countDownDate.getFullYear() + 2 , countDownDate.getMonth() + 1 ,);
-
-var x = setInterval(function(){
+// --- 1. العداد التنازلي ---
+var countDownDate = new Date(new Date().getFullYear() + 2, new Date().getMonth() + 1, 1);
+setInterval(function() {
     var now = new Date();
     var diff = countDownDate - now;
-
-    var months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
-    var days = Math.floor(diff % (1000 * 60 * 60 * 24 * 30) / (1000 * 60 * 60 * 24));
-    var hours = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-    var minutes = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
-    var seconds = Math.floor(diff % (1000 * 60) / 1000);
-
-    document.getElementById("months").innerHTML = months;
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    if (document.getElementById("months")) {
+        document.getElementById("months").innerHTML = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+        document.getElementById("days").innerHTML = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerHTML = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerHTML = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("seconds").innerHTML = Math.floor((diff % (1000 * 60)) / 1000);
+    }
 }, 1000);
 
+// --- 2. الروابط (ضع روابطك الكاملة هنا) ---
+const emailFormURL = 'https://formspree.io/f/meerowgn';
+const regFormURL = 'https://formspree.io/f/mreybdwp';
 
+// --- 3. دالة الإرسال المصححة ---
+function handleFormSubmit(form, url, successMsg, callback) {
+    Swal.fire({ 
+        title: 'جاري الإرسال...', 
+        allowOutsideClick: false, 
+        didOpen: () => Swal.showLoading() 
+    });
 
+    const formData = new FormData(form);
 
-// استبدل هذا الرابط بالرابط الذي حصلت عليه من جوجل (Deployment URL)
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwjBtBmlZKeaZVToeXPXwVfSTuDMyBPcPtSTtb4d-bD-OBoL3UTDtzmvDiFMk-as6w/exec';
-// استهداف جميع النماذج التي تحمل كلاس التوثيق
-const forms = document.querySelectorAll('.needs-validation');
-
-// تكرار الكود لكل فورم موجود في الصفحة
-forms.forEach(form => {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    if (!form.checkValidity()) {
-      e.stopPropagation();
-      form.classList.add('was-validated');
-    } else {
-      // إظهار رسالة الانتظار
-      Swal.fire({
-        title: 'جاري تسجيل بياناتك...',
-        allowOutsideClick: false,
-        didOpen: () => { Swal.showLoading(); }
-      });
-
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            Swal.fire({
-              icon: 'success',
-              title: 'تم التسجيل بنجاح!',
-              text: 'شكراً لاهتمامك، سنقوم بإشعارك فور انطلاق الموقع.',
-              confirmButtonText: 'حسناً',
-              confirmButtonColor: '#237920'
-            });
+    fetch(url, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            Swal.fire({ icon: 'success', title: 'نجاح!', text: successMsg });
             form.reset();
-            form.classList.remove('was-validated');
-        })
-        .catch(error => {
-            console.error('Error!', error.message);
-            Swal.fire({
-              icon: 'error',
-              title: 'عذراً!',
-              text: 'حدث خطأ أثناء الإرسال، حاول مرة أخرى.',
-              confirmButtonText: 'موافق'
+            if (callback) callback();
+        } else {
+            return response.json().then(data => {
+                throw new Error(data.error || 'فشل الإرسال');
             });
-        });
-    }
-  });
+        }
+    })
+    .catch(error => {
+        Swal.fire({ icon: 'error', title: 'خطأ!', text: 'تعذر الإرسال. تأكد من اتصالك بالإنترنت.' });
+        console.error('Formspree Error:', error);
+    });
+}
+
+// --- 4. تفعيل المعالجة للفورمين ---
+
+// فورم الإيميلات
+document.querySelectorAll('.needs-validation').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (this.checkValidity()) {
+            handleFormSubmit(this, emailFormURL, 'تم تسجيل بريدك بنجاح.');
+        } else {
+            this.classList.add('was-validated');
+        }
+    });
 });
+
+// فورم التسجيل
+const regForm = document.getElementById('association-form');
+if (regForm) {
+    regForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleFormSubmit(this, regFormURL, 'تم تسجيل بياناتك بنجاح.', () => {
+            const modalEl = document.getElementById('registrationModal');
+            if (modalEl) {
+                const modal = bootstrap.Modal.getInstance(modalEl);
+                if (modal) modal.hide();
+            }
+        });
+    });
+}
