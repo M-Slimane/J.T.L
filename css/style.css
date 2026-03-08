@@ -342,3 +342,102 @@ header .send-notification .input-group button:hover {
     animation: none; /* توقف الحركة عند وضع الماوس عليه */
     background-color: #1e631b; /* تغميق اللون قليلاً عند التمرير */
 }
+
+
+/* ********************************************************************************* */
+
+/* الألوان الأساسية */
+:root {
+    --navy: #0a192f;
+    --teal: #008080;
+    --neon: #64ffda;
+    --light-grey: #f8f9fa;
+}
+
+/* تنسيقات الزر الرئيسي */
+.btn-register-main {
+    background: linear-gradient(45deg, var(--teal), var(--navy));
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.4s ease;
+    margin-top: 30px;
+}
+
+.btn-register-main:hover {
+    transform: scale(1.05);
+    color: var(--neon);
+    box-shadow: 0 10px 20px rgba(0, 128, 128, 0.3);
+}
+
+/* تنسيقات المودل */
+.registration-modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+}
+
+.modal-header-custom {
+    background: linear-gradient(135deg, var(--navy), var(--teal));
+    color: white;
+    padding: 2rem;
+    position: relative;
+}
+
+.section-divider {
+    text-align: right;
+    margin: 20px 0;
+    border-bottom: 2px solid #eee;
+    line-height: 0.1em;
+}
+
+.section-divider span {
+    background: #fff;
+    padding: 0 10px;
+    color: var(--teal);
+    font-weight: bold;
+}
+
+.custom-input {
+    border: 2px solid #eee !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+}
+
+.custom-input:focus {
+    border-color: var(--teal) !important;
+    box-shadow: 0 0 10px rgba(0, 128, 128, 0.1) !important;
+}
+
+.payment-highlight {
+    background: var(--light-grey);
+    border-radius: 12px;
+    border: 1px dashed var(--teal);
+}
+
+.btn-submit-registration {
+    background: var(--teal);
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-submit-registration:hover {
+    background: var(--navy);
+}
+
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--teal) !important;
+}
