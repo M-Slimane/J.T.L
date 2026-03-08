@@ -64,7 +64,7 @@ header .heading-page p{
 
 header .count-down {
     width: auto;
-    margin: 90px auto;
+    margin: 50px auto;
 }
     
 header .counter {
@@ -362,9 +362,10 @@ header .send-notification .input-group button:hover {
     padding: 15px 40px;
     border-radius: 50px;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
     transition: 0.4s ease;
-    margin-top: 30px;
+    margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 .btn-register-main:hover {
